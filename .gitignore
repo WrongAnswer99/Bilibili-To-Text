@@ -1,0 +1,89 @@
+# Local settings and environment
+/config.json
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+.vscode/
+.idea/
+
+# Python caches and packaging
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+
+# Generated builds and native binaries
+/build/
+/build-*/
+/cmake-build-*/
+/dist/
+/dist-*/
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.exp
+*.obj
+*.o
+*.lib
+*.a
+*.so
+*.dylib
+
+# Downloaded dependencies and runtime
+/.source/
+/.vendor/
+/runtime/
+/third_party/whisper.cpp/
+
+# Model weights (keep metadata and licenses)
+/models/**/*.bin
+/models/**/*.pt
+/models/**/*.pth
+/models/**/*.onnx
+/models/**/*.safetensors
+/models/**/*.gguf
+
+# Results, diagnostics and temporary downloads
+/output/
+/.work/
+*.log
+*.tmp
+*.temp
+*.partial
+*.part
+*.bak
+
+# Local media
+*.mp4
+*.mkv
+*.mov
+*.webm
+*.avi
+*.m4v
+*.flv
+*.ts
+*.m4s
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.ogg
+
+# Historical local folders
+/.snapany-profile/
+/whisper-gpu/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
