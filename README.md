@@ -6,7 +6,7 @@
 
 1. 准备 Windows x64、64 位 Python 和本项目的模型、运行库及 FFmpeg。当前电脑已经配置完成，可直接运行；从源码新建环境的步骤见下方“项目结构与依赖”。GPU 识别需要兼容的 NVIDIA 驱动，也可以在窗口选择 CPU。
 2. 本地视频转换只需双击根目录 **start.cmd**。
-3. 需要从浏览器下载并自动转换时，先双击根目录 **register_protocol.cmd** 注册协议，再按下方教程安装油猴脚本。移动项目文件夹或更换 Python 后，按下方“注册协议”中的 -Force 命令更新。
+3. 需要从浏览器下载并自动转换时，先双击根目录 **register_protocol.cmd** 注册协议，再按下方教程安装油猴脚本。移动项目文件夹或更换 Python 后，双击 **register_protocol_force.cmd** 更新协议路径。
 4. 浏览器默认下载目录、油猴面板中的目录、注册协议时设置的目录必须一致。目前本机使用 **C:\Users\admin\Downloads**。
 
 ## 本地软件使用教程
@@ -80,9 +80,11 @@ powershell -ExecutionPolicy Bypass -File register_protocol.ps1 -Check
 powershell -ExecutionPolicy Bypass -File register_protocol.ps1 -Unregister
 # 移动项目或更换 Python 后，在新的项目目录更新协议路径：
 powershell -ExecutionPolicy Bypass -File register_protocol.ps1 -Force
+# 专用的强制注册入口，也可带 -DownloadDirectory 或 -Check：
+powershell -ExecutionPolicy Bypass -File register_protocol_force.ps1
 ~~~
 
-普通注册会拒绝覆盖其他路径；确认要迁移时使用 **-Force**。重新注册默认保留 config.json 中的下载目录；需要更改时指定 **-DownloadDirectory**。**-Unregister** 可在新目录清除旧注册。
+普通注册会拒绝覆盖其他路径；确认要迁移时，双击根目录 [register_protocol_force.cmd](register_protocol_force.cmd)，或运行 [register_protocol_force.ps1](register_protocol_force.ps1)。PS1 入口默认强制注册，支持 **-DownloadDirectory** 和只读检查 **-Check**；上面的普通脚本 **-Force** 命令也可使用。重新注册默认保留 config.json 中的下载目录；需要更改时指定 **-DownloadDirectory**。**-Unregister** 可在新目录清除旧注册。
 
 协议只传 BV、分 P、下载文件名与转换参数，不传 Cookie。本地仅从配置的下载目录解析浏览器任务，拒绝未知操作、路径穿越、混合任务和不完整转换任务。重复转换同一个本地文件会被任务锁拒绝。
 

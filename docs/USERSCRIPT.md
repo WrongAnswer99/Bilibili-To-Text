@@ -8,7 +8,7 @@
 2. 油猴管理面板 → 设置 → **配置模式：高级**，下载模式设为 **浏览器 API**，允许下载权限。
 3. 扩展名白名单允许 mp4；分离音视频还需要 m4s。
 4. 核对浏览器实际下载目录，关闭每次询问保存位置。面板默认 C:\Users\admin\Downloads。
-5. 要使用转换或打开文件夹，本地首次运行 register_protocol.cmd；更换下载目录执行 register_protocol.ps1 -DownloadDirectory "实际目录"；移动项目或更换 Python 后，在新的项目目录执行 register_protocol.ps1 -Force 更新注册。
+5. 要使用转换或打开文件夹，本地首次运行 register_protocol.cmd；更换下载目录执行 register_protocol.ps1 -DownloadDirectory "实际目录"；移动项目或更换 Python 后，双击新项目目录中的 register_protocol_force.cmd 更新注册，也可以运行 register_protocol_force.ps1（支持 -DownloadDirectory 和 -Check），或执行 register_protocol.ps1 -Force。
 
 仅使用“下载视频”无需安装或启动本地应用。
 
